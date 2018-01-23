@@ -26,4 +26,19 @@ rake db:migrate
 rails s
 ```
 
-You can now see the apis up and running locally at http://localhost:3000. Whoa! Thats fast ;)
+You can now see the project up and running locally at http://localhost:3000. Whoa! Thats fast ;)
+
++ **Sign Up:**
+
+  One can create user either using console or using sign_up page.
+
+  #### HTTP Request
+  `POST http://localhost:3000/users/sign_up`
+
+  #### Parameters
+  Parameter | Presence | Description
+  --- | --- | ---
+  user[emai] | required | User email address.
+  user[password] | required | User password.
+  first_name | required | First name of the user.
+  last_name | required | Last name of the user.
