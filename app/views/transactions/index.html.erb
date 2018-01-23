@@ -1,0 +1,43 @@
+<%= render '/partials/header' %>
+<div class="container-fluid">
+  <div class="row">
+    <%= render '/partials/sidebar' %>
+    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+      <%=render '/partials/error_messages'%>
+      <div class="container">
+        <div class="d-flex flex-row justify-content-end">
+          <div class="mr-auto p-2"><h2>Transactions </h2></div>
+          <div class="p-2"><a class="btn btn-success float-right" href="<%=new_transaction_path%>">Make A Transaction</a></div>
+        </div>
+
+      </div>
+      <br>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Sender </th>
+              <th>Reciever</th>
+              <th>Reciever Account</th>
+              <th>Amount </th>
+              <th>Status </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@transactions.each do |f| %>
+              <tr>
+                <td><%=f.user.first_name+ '' +f.user.last_name%></td>
+                <td><%=reciver_user(f.reciever_user_id)%></td>
+                <td><%=reciever_account(f.reciever_account_id)%></td>
+                <td><%=f.amount%></td>
+                <td><a class="btn btn-sm btn-success" href="<%=complete_transaction_transaction_path(f.id)%>" ><%=f.status%></a></td>
+
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+</div>

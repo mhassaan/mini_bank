@@ -1,0 +1,36 @@
+<%= render '/partials/header' %>
+<div class="container-fluid">
+  <div class="row">
+    <%= render '/partials/sidebar' %>
+    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+      <%=render '/partials/error_messages'%>
+      <div class="container">
+        <div class="d-flex flex-row justify-content-end">
+          <div class="mr-auto p-2"><h2>Beneficiaries </h2></div>
+          <div class="p-2"><a class="btn btn-success float-right" href="<%=new_beneficiary_path%>">New Beneficiary</a></div>
+        </div>
+
+      </div>
+      <br>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Beneficiary Name</th>
+              <th>beneficiary Account</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@beneficiaries.each do |b|%>
+              <tr>
+                <td><%=benefactor_name(b.benefactor_id)%></td>
+                <td><%=benefactor_account(b.account_id)%></td>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+</div>

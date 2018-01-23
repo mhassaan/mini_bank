@@ -1,0 +1,167 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  font-family: 'Lato', sans-serif;
+  /*background:url('/assets/background.jpg') no-repeat center center fixed;*/
+  background-size: 100% auto;
+}
+
+/*
+ * Typography
+ */
+
+h1 {
+  /*margin-bottom: 20px;*/
+  padding-bottom: 9px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+}
+
+/* Sidebar navigation */
+.sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+}
+
+/*
+ * Dashboard
+ */
+
+ /* Placeholders */
+.placeholders {
+  padding-bottom: 3rem;
+}
+
+.placeholder img {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/*
+  *CSS rules for pagination
+*/
+.pagination a {
+  @extend .page-link;
+}
+.pagination em{
+  @extend .page-link;
+  background-color: #0275d8;
+  border-color: #0275d8;
+  color: #fff;
+}
+.pagination span {
+  @extend .page-link;
+}
+
+/*CSS Rules for Sign In Page*/
+.sign-in-btn{
+  cursor: pointer;
+  background-color: #333333;
+}
+.main-wrapper{
+  height: 100vh;
+  background:url('/assets/background.jpg') center fixed;
+}
+
+
+.hr{
+  width: 50%;
+  align: center;
+  background-color: #333333;
+}
+
+.form-signin {
+  padding: 20px 19px 29px 29px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+.forget-password-link{
+  color: black;
+}
+.forget-password-link:hover {
+  color: #868e96;
+}
+/* Attendee form styling*/
+.attendee-header-text{
+  margin-top: 15px !important;
+  color: #868e96 !important;
+}
+.step-2-text{
+  font-weight: bold;
+}
+.step2-option-select{
+  width: 500px;
+}
+
+/* Button Styles in Admin*/
+
+.new-btn{
+  color: #ffffff !important;
+  background-color: #0e7e12 !important;
+  border-color: #0e7e12 !important;
+  cursor: pointer;
+
+}
+
+.new-btn:hover{
+  color: #ffffff !important;
+  background-color: #217024 !important;
+  border-color: #217024 !important;
+
+}
+
+.logout-btn-admin{
+  color: #fff !important;
+  background-color: #c82333 !important;
+  border-color: #c82333 !important;
+}
+
+.logout-btn-admin:hover{
+  color: #fff !important;
+  background-color: #b71f2b !important;
+}
+
+
+.admin-sidebar-link:hover{
+  color: #fff !important;
+  background-color: #17a2b8 !important;
+  border-color: #17a2b8 !important;
+}
+.actiavted{
+  color: #fff !important;
+  background-color: #17a2b8 !important;
+  border-color: #17a2b8 !important;
+}

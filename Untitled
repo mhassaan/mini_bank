@@ -1,0 +1,4 @@
+# def set_up_account user_id, account_id
+#   user_account = UserAccount.create(user_id: user_id, account_id: account_id)
+#   user_account.save!
+# end
