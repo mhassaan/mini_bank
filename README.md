@@ -5,7 +5,7 @@ This documentation intends to give an overview of the flow of the program.
 
 + **Count Bits:**
 
-  In order to rub testcase 1 use the following command from IRB.
+  In order to run testcase 1 use the following command from IRB.
 
   count_bits('path_to_pic')
 
