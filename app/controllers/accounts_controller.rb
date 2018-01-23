@@ -16,8 +16,18 @@ class AccountsController < ApplicationController
         reciever = User.find reciever_user_id
         reciever_account = reciever.accounts.where(id: reciever_account_id).first
         sender_account = current_user.accounts.where(id: sender_account_id).first
-        reciever_account.balance = reciever_account.balance + amount.to_f
-        sender_account.balance = sender_account.balance - amount.to_f
+        if reciever_account.balance.present?
+          reciever_account.balance = reciever_account.balance + amount.to_f
+        else
+          reciever_account.balance = 0.0
+          reciever_account.balance = reciever_account.balance + amount.to_f
+        end
+        if sender_account.balance.present?
+          sender_account.balance = sender_account.balance - amount.to_f
+        else
+          sender_account.balance = 0.0
+          sender_account.balance = sender_account.balance - amount.to_f
+        end
         sender_account.save!; reciever_account.save!
       end
     end

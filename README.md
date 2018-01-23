@@ -83,3 +83,30 @@ You can now see the project up and running locally at http://localhost:3000. Who
   --- | --- | ---
   user_id | required | Id of the newly created user.
   account_id | required | Id of any of the account created above.
+
++ **Beneficiary:**
+
+
+  Beneficiary represents the reciever user in the bank.
+  Before starting transaction, one must add a beneficiary under his account after login the application.
+
+
++ **My Accounts:**
+
+  My account section displays all the accounts associated to log-in user.
+
+
++ **Transfer:**
+
+  Login user can transfer money to his/her beneficiaries using this tab in the application.
+
+
++ **Assumptions:**
+
+  User can have multiple acccounts.
+
+  One account associated to user can't be associated to any other user in order to maintain uniqueness of the user's accounts.
+
+  After transfering the money, user is redirected to 'My Accounts' page, where he/she can have a look at the recent updates in the balance.
+
+  
