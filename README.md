@@ -32,7 +32,7 @@ You can now see the project up and running locally at http://localhost:3000. Who
 
   One can create user either using console or using sign_up page.
 
-  #### HTTP Request
+  #### URL Request
   `POST http://localhost:3000/users/sign_up`
 
   #### Parameters
@@ -42,3 +42,40 @@ You can now see the project up and running locally at http://localhost:3000. Who
   user[password] | required | User password.
   first_name | required | First name of the user.
   last_name | required | Last name of the user.
+
++ **Sign Up Using IRB:**
+
+  Create user using IRB.
+
+  #### Command
+  `User.create(email:'johanas@mail.com',password:'12345678',first_name:'Johans',
+    last_name:'Berg',address:'Park Lane', city:'NY', state:'NY',zip: '38100')`
+
+  #### Parameters
+  Parameter | Presence | Description
+  --- | --- | ---
+  user[emai] | required | User email address.
+  user[password] | required | User password.
+  first_name | required | First name of the user.
+  last_name | required | Last name of the user.
+
++ **Create Bank Accounts:**
+  Before setting up account for user we need to setup accounts for our bank.
+  Set up bank accounts using IRB.
+  By default balance is 0.0
+
+  #### Command
+  `Account.create(title:'Name of the account', balance: '')`
+
++ **Set Up User's Bank Accounts:**
+  After creating bank accounts, now we can set up our user account.
+
+  #### Command
+  `require '/path_to_project_folder/app/services/account_service.rb'`
+  `AccountService.set_up_account({account_id:1,user_id:4})`
+
+  #### Parameters
+  Parameter | Presence | Description
+  --- | --- | ---
+  user_id | required | Id of the newly created user.
+  account_id | required | Id of any of the account created above.
