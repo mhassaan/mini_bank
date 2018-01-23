@@ -11,8 +11,8 @@ User.create(email:'rita@mail.com',password:'12345678',first_name:'Rita',
 User.create(email:'johanas@mail.com',password:'12345678',first_name:'Johans',
            last_name:'Berg',address:'Park Lane', city:'NY', state:'NY',zip: '38100')
 
-User.create(email:'malika@mail.com',password:'12345678',first_name:'Dane',
-          last_name:'Berg',address:'Park Lane', city:'NY', state:'NY',zip: '38100')
+User.create(email:'malika@mail.com',password:'12345678',first_name:'Dane',last_name:'Berg',address:'Park Lane', city:'NY', state:'NY',zip: '38100')
+
 
 Account.create(title: 'Family Account ', balance:'')
 Account.create(title: 'Savings Account ', balance:'')

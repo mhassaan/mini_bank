@@ -15,8 +15,10 @@ class BeneficiaryService
       result = "User has already added this account as a beneficiary."
       false
     else
-      user_beneficiary = @current_user.beneficiaries.new(benefactor_id: args[:beneficiary][:benefactor_id], account_id: args[:beneficiary][:account_id])
-      user_beneficiary.save!
+      unless args[:beneficiary][:account_id] == "Please select account"
+        user_beneficiary = @current_user.beneficiaries.new(benefactor_id: args[:beneficiary][:benefactor_id], account_id: args[:beneficiary][:account_id])
+        user_beneficiary.save!
+      end
     end
   end
 

@@ -1,6 +1,6 @@
 class BeneficiariesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @beneficiaries = current_user.beneficiaries
   end
