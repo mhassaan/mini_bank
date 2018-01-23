@@ -9,6 +9,7 @@ $(document).on('turbolinks:load',function(){
         dataType: 'json'
       }).done(function(response){
         console.log("Success reponse is:"+ JSON.stringify(response));
+        $('#reciever_account_id').find('option:not(:first)').remove();
         $(jQuery.parseJSON(JSON.stringify(response))).each(function() {
           $('#reciever_account_id').append("<option value='" + this.id + "'> " + this.title + "</option>")
         });
