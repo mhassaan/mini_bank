@@ -1,21 +1,24 @@
 <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
   <ul class="nav nav-pills flex-column">
-    <li class="nav-item">
-      <a style="color:#fff;background-color:#17a2b8;" class="nav-link active" data-turbolinks="false" href="#">Overview <span class="sr-only">(current)</span></a>
-    </li>
+    <%if current_user.role == 'admin'%>
+      <li class="nav-item">
+        <a style="color:#fff;background-color:#17a2b8;" class="nav-link active" data-turbolinks="false" href="<%=dashboard_path%>">Overview <span class="sr-only">(current)</span></a>
+      </li>
+    <%end%>
   </ul>
 
   <ul class="nav nav-pills flex-column">
-
-      <li class="nav-item">
-        <a  class= "nav-link admin-sidebar-link" href="<%=beneficiaries_path%>">Beneficiary</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link admin-sidebar-link" href="<%=accounts_path%>">My Accounts</a>
-      </li>
-      <li class="nav-item">
-        <a  class="nav-link admin-sidebar-link"  href="<%=transactions_path%>">Transfer</a>
-      </li>
+      <%unless current_user.role == 'admin'%>
+        <li class="nav-item">
+          <a  class= "nav-link admin-sidebar-link" href="<%=beneficiaries_path%>">Beneficiary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link admin-sidebar-link" href="<%=accounts_path%>">My Accounts</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link admin-sidebar-link"  href="<%=transactions_path%>">Transfer</a>
+        </li>
+      <%end%>
 
   </ul>
 

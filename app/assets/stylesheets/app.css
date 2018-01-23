@@ -165,3 +165,7 @@ h1 {
   background-color: #17a2b8 !important;
   border-color: #17a2b8 !important;
 }
+.disable-btn{
+  pointer-events: none !important;
+  cursor: default !important;
+}

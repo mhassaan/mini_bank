@@ -27,4 +27,11 @@ class TransactionService
     transactions = @current_user.transactions.where(status: 'pending')
   end
 
+  def app_wide_transactions
+    transactions = Transaction.where(status: 'pending')
+  end
+
+  def approved_transactions
+    transactions= @current_user.transactions.where(status: 'Accepted')
+  end
 end

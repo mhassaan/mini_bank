@@ -23,11 +23,11 @@ Rails.application.routes.draw do
 
   resources :transactions do
     collection do
-      #get 'all_accounts', to: 'transactions#all_accounts'
       get 'update_status', to: 'transactions#update_status'
     end
     member do
       get 'complete_transaction', to: 'transactions#complete_transaction'
+      get 'approve_transaction', to: 'transactions#approve_transaction'
     end
   end
 

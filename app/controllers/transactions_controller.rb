@@ -3,7 +3,8 @@ class TransactionsController < ApplicationController
 
   def index
     @transactions = TransactionService.new({current_user: current_user}).all_transactions
-
+    #@transactions = TransactionService.new({current_user: current_user}).app_wide_transactions
+    @approved_transactions = TransactionService.new({current_user: current_user}).approved_transactions
   end
 
   def new
@@ -43,6 +44,19 @@ class TransactionsController < ApplicationController
     transaction.status = "Accepted"
     transaction.save!
     redirect_to accounts_path
+  end
+
+  def approve_transaction
+    transaction = Transaction.find params[:id]
+    b_account_id  = transaction.reciever_account_id
+    b_user_id = transaction.reciever_user_id
+    sender = transaction.user
+    Account.where(id: b_account_id).first
+    User.where(id: b_user_id).first
+    UserAccount.where(user_id: b_user_id, account_id: b_account_id).first
+    transaction.status = "Accepted"
+    transaction.save!
+    redirect_to dashboard_path
   end
 
 end

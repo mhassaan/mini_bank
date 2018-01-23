@@ -1,6 +1,16 @@
 # README
 This documentation intends to give an overview of the flow of the program.
 
+### Test Case-1
+
++ **Count Bits:**
+
+  In order to rub testcase 1 use the following command from IRB.
+
+  count_bits('path_to_pic')
+
+### Test Case-2
+
 Getting started with mini_bank
 --------------------------------
 
@@ -109,4 +119,8 @@ You can now see the project up and running locally at http://localhost:3000. Who
 
   After transfering the money, user is redirected to 'My Accounts' page, where he/she can have a look at the recent updates in the balance.
 
-  
+  Whenever a transaction is made its status has been set to 'pending'.
+
+  In order to avoid money appearing/appearing once, i devised an assumption of assigning role to users. User with role 'admin' can approve transaction
+  requests and thus change status to 'Accepted' from 'pending' and changes in the balance can be seen in the sender and reciever
+  accounts.
