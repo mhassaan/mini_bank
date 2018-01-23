@@ -38,8 +38,8 @@ You can now see the project up and running locally at http://localhost:3000. Who
   #### Parameters
   Parameter | Presence | Description
   --- | --- | ---
-  user[emai] | required | User email address.
-  user[password] | required | User password.
+  emai | required | User email address.
+  user | required | User password.
   first_name | required | First name of the user.
   last_name | required | Last name of the user.
 
@@ -54,12 +54,14 @@ You can now see the project up and running locally at http://localhost:3000. Who
   #### Parameters
   Parameter | Presence | Description
   --- | --- | ---
-  user[emai] | required | User email address.
-  user[password] | required | User password.
+  email | required | User email address.
+  password | required | User password.
   first_name | required | First name of the user.
   last_name | required | Last name of the user.
 
 + **Create Bank Accounts:**
+
+
   Before setting up account for user we need to setup accounts for our bank.
   Set up bank accounts using IRB.
   By default balance is 0.0
@@ -68,6 +70,8 @@ You can now see the project up and running locally at http://localhost:3000. Who
   `Account.create(title:'Name of the account', balance: '')`
 
 + **Set Up User's Bank Accounts:**
+
+
   After creating bank accounts, now we can set up our user account.
 
   #### Command
